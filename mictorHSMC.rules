@@ -1,0 +1,115 @@
+
+(rules PCB mictorHSMC.dsn
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 1)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 4.9)
+    )
+    (layer_rule In1.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.1)
+    )
+    (layer_rule In2.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 4.1)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 3.9)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clearance 200.0)
+    (clearance 100.0 (type smd_to_turn_gap))
+    (clearance 50.0 (type smd))
+    (clearance 200.0 (type "kicad_default"))
+  )
+  (padstack "Via[0-3]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-3]_600:300_um" "Via[0-3]_600:300_um" default
+  )
+  (via 
+    "Via[0-3]_600:300_um-kicad_default" "Via[0-3]_600:300_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-3]_600:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-3]_600:300_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "HSM_D8" "HSM_D16" "HSM_D12" "HSM_D4" "HSM_D23" "HSM_D27" "HSM_D17" "HSM_D20"
+    "HSM_D0" "HSM_CLKOUT0" GND "HSM_D7" "HSM_D22" "HSM_D32" "HSM_CLKIN0" "HSM_D26"
+    "HSM_D35" "HSM_D13" "HSM_D3" "HSM_D14" "HSM_D34" "HSM_D5" "HSM_D21" "HSM_D15"
+    "HSM_D11" "HSM_D10" "HSM_D19" "HSM_D31" "HSM_D24" "HSM_D33" "HSM_D28" "HSM_D25"
+    "HSM_D30" "HSM_D18" "HSM_D2" "HSM_D9" "HSM_D1" "HSM_D6" "HSM_D29" "unconnected-(J2-Pad160)"
+    "unconnected-(J2-Pad88)" "unconnected-(J2-Pad118)" "unconnected-(J2-Pad159)" "unconnected-(J2-Pad149)" "unconnected-(J2-Pad108)" "unconnected-(J2-Pad138)" "unconnected-(J2-Pad141)" "unconnected-(J2-Pad32)"
+    "unconnected-(J2-Pad29)" "unconnected-(J2-Pad9)" "unconnected-(J2-Pad102)" "unconnected-(J2-Pad153)" "unconnected-(J2-Pad151)" "unconnected-(J2-Pad117)" "unconnected-(J2-Pad130)" "unconnected-(J2-Pad113)"
+    "unconnected-(J2-Pad5)" "unconnected-(J2-Pad96)" "unconnected-(J2-Pad126)" "unconnected-(J2-Pad63)" "unconnected-(J2-Pad98)" "unconnected-(J2-Pad156)" "unconnected-(J2-Pad12)" "unconnected-(J2-Pad28)"
+    "unconnected-(J2-Pad4)" "unconnected-(J2-Pad158)" "unconnected-(J2-Pad152)" "unconnected-(J2-Pad143)" "unconnected-(J2-Pad125)" "unconnected-(J2-Pad15)" "unconnected-(J2-Pad64)" "unconnected-(J2-Pad144)"
+    "unconnected-(J2-Pad112)" "unconnected-(J2-Pad99)" "unconnected-(J2-Pad7)" "unconnected-(J2-Pad82)" "unconnected-(J2-Pad106)" "unconnected-(J2-Pad135)" "unconnected-(J2-Pad155)" "unconnected-(J2-Pad38)"
+    "unconnected-(J2-Pad87)" "unconnected-(J2-Pad51)" "unconnected-(J2-Pad37)" "unconnected-(J2-Pad34)" "unconnected-(J2-Pad31)" "unconnected-(J2-Pad52)" "unconnected-(J2-Pad100)" "unconnected-(J2-Pad2)"
+    "unconnected-(J2-Pad25)" "unconnected-(J2-Pad137)" "unconnected-(J2-Pad26)" "unconnected-(J2-Pad140)" "unconnected-(J2-Pad1)" "unconnected-(J2-Pad6)" "unconnected-(J2-Pad148)" "unconnected-(J2-Pad104)"
+    "unconnected-(J2-Pad58)" "unconnected-(J2-Pad121)" "unconnected-(J2-Pad14)" "unconnected-(J2-Pad69)" "unconnected-(J2-Pad20)" "unconnected-(J2-Pad101)" "unconnected-(J2-Pad103)" "unconnected-(J2-Pad127)"
+    "unconnected-(J2-Pad116)" "unconnected-(J2-Pad97)" "unconnected-(J2-Pad129)" "unconnected-(J2-Pad139)" "unconnected-(J2-Pad124)" "unconnected-(J2-Pad145)" "unconnected-(J2-Pad150)" "unconnected-(J2-Pad110)"
+    "unconnected-(J2-Pad136)" "unconnected-(J2-Pad33)" "unconnected-(J2-Pad95)" "unconnected-(J2-Pad123)" "unconnected-(J2-Pad94)" "unconnected-(J2-Pad16)" "unconnected-(J2-Pad30)" "unconnected-(J2-Pad109)"
+    "unconnected-(J2-Pad21)" "unconnected-(J2-Pad13)" "unconnected-(J2-Pad105)" "unconnected-(J2-Pad120)" "unconnected-(J2-Pad35)" "unconnected-(J2-Pad22)" "unconnected-(J2-Pad46)" "unconnected-(J2-Pad93)"
+    "unconnected-(J2-Pad114)" "unconnected-(J2-Pad107)" "unconnected-(J2-Pad57)" "unconnected-(J2-Pad45)" "unconnected-(J2-Pad122)" "unconnected-(J2-Pad146)" "unconnected-(J2-Pad119)" "unconnected-(J2-Pad128)"
+    "unconnected-(J2-Pad115)" "unconnected-(J2-Pad70)" "unconnected-(J2-Pad81)" "unconnected-(J2-Pad8)" "unconnected-(J2-Pad17)" "unconnected-(J2-Pad19)" "unconnected-(J2-Pad11)" "unconnected-(J2-Pad36)"
+    "unconnected-(J2-Pad133)" "unconnected-(J2-Pad157)" "unconnected-(J2-Pad132)" "unconnected-(J2-Pad10)" "unconnected-(J2-Pad24)" "unconnected-(J2-Pad147)" "unconnected-(J2-Pad134)" "unconnected-(J2-Pad27)"
+    "unconnected-(J2-Pad154)" "unconnected-(J2-Pad111)" "unconnected-(J2-Pad75)" "unconnected-(J2-Pad142)" "unconnected-(J2-Pad3)" "unconnected-(J2-Pad23)" "unconnected-(J2-Pad76)" "unconnected-(J2-Pad131)"
+    "unconnected-(J2-Pad18)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+)
