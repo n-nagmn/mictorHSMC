@@ -83,6 +83,3 @@ This repository includes footprint and symbol data downloaded from **SnapEDA** a
 This project is a hobbyist creation and is provided "AS IS" without warranty of any kind. The author is not responsible for any damage to your hardware (FPGA boards, probes, etc.) caused by the use of this design. Please verify pinouts and signal integrity before fabrication.
 
 本設計データは無保証です。使用に伴うハードウェア（FPGAや測定器等）の故障・損害について作者は責任を負いません。製造前にピンアサインや信号品質を十分にご確認ください。
-
-## Author
-[Your Name / GitHub ID]
